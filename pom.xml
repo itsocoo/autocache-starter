@@ -13,6 +13,8 @@
         <spring-boot-version>2.1.2.RELEASE</spring-boot-version>
         <caffeine.version>2.6.2</caffeine.version>
         <commons.lang3.version>3.8.1</commons.lang3.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
@@ -72,7 +74,6 @@
         </dependencies>
     </dependencyManagement>
 
-
     <build>
         <pluginManagement>
             <plugins>
@@ -119,14 +120,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <!--<version>${install.version}</version>-->
                     <version>3.0.0-M1</version>
                 </plugin>
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <!--<version>${javadoc.version}</version>-->
                     <version>3.0.1</version>
                     <configuration>
                         <quiet>true</quiet>
@@ -167,19 +166,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.1.1</version>
-            </plugin>
-
-            <plugin>
-                <artifactId>whitespace-maven-plugin</artifactId>
-                <groupId>com.github.dantwining.whitespace-maven-plugin</groupId>
-                <executions>
-                    <execution>
-                        <phase>process-sources</phase>
-                        <goals>
-                            <goal>trim</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
         </plugins>

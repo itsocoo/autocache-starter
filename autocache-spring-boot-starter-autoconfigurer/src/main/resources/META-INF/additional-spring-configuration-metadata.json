@@ -1,45 +1,45 @@
 {
   "groups": [
     {
-      "name": "lzsz.cache.aspect",
+      "name": "itsocoo.cache.aspect",
       "sourceType": "com.itsocoo.autocache.redis.properties.AspectSourceProperties",
       "type": "com.itsocoo.autocache.redis.properties.AspectSourceProperties"
     }
   ],
   "properties": [
     {
-      "name": "lzsz.cache.aspect.enable",
+      "name": "itsocoo.cache.aspect.enable",
       "type": "    java.lang.Boolean",
       "sourceType": "com.itsocoo.autocache.redis.properties.AspectSourceProperties",
       "defaultValue": "false"
     },
     {
-      "name": "lzsz.cache.aspect.pointcut-query",
+      "name": "itsocoo.cache.aspect.pointcut-query",
       "type": "    java.lang.String",
       "sourceType": "com.itsocoo.autocache.redis.properties.AspectSourceProperties",
       "defaultValue": "find,list,load"
     },
     {
-      "name": "lzsz.cache.aspect.scan-class-suffix",
+      "name": "itsocoo.cache.aspect.scan-class-suffix",
       "type": "    java.lang.String",
       "sourceType": "com.itsocoo.autocache.redis.properties.AspectSourceProperties",
       "defaultValue": "ServiceImpl"
     },
     {
-      "name": "lzsz.cache.aspect.pointcut-evict",
+      "name": "itsocoo.cache.aspect.pointcut-evict",
       "type": "    java.lang.String",
       "sourceType": "com.itsocoo.autocache.redis.properties.AspectSourceProperties",
       "defaultValue": "update,delete,clean"
     },
     {
-      "name": "lzsz.cache.aspect.scan-package-paths",
+      "name": "itsocoo.cache.aspect.scan-package-paths",
       "type": "java.lang.reflect.Array",
       "sourceType": "com.itsocoo.autocache.redis.properties.AspectSourceProperties"
     }
   ],
   "hints": [
     {
-      "name": "lzsz.cache.aspect.enable",
+      "name": "itsocoo.cache.aspect.enable",
       "type": "java.lang.Boolean",
       "values": [
         {

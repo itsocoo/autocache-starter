@@ -10,11 +10,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  */
 @ConfigurationProperties(prefix = AspectSourceProperties.ASPECT_SOURCE_PREFIX)
 public class AspectSourceProperties {
-    static final String ASPECT_SOURCE_PREFIX = "lzsz.cache.aspect";
+    static final String ASPECT_SOURCE_PREFIX = "itsocoo.cache.aspect";
 
     // 是否开启该自动缓存
     private boolean enable;
-
 
     // 缓存的切点
     private String pointcutQuery = "find,list,load";

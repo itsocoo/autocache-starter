@@ -39,40 +39,6 @@ import java.util.concurrent.TimeUnit;
 public class AspectSourceAutoConfiguration {
     private static final Logger logger = LoggerFactory.getLogger(AspectSourceAutoConfiguration.class);
 
-    /**
-     * 创建基于Caffeine的Cache Manager
-     * ---------------------
-     * Caffeine配置说明：
-     * <p>
-     * initialCapacity=[integer]: 初始的缓存空间大小
-     * maximumSize=[long]: 缓存的最大条数
-     * maximumWeight=[long]: 缓存的最大权重
-     * expireAfterAccess=[duration]: 最后一次写入或访问后经过固定时间过期
-     * expireAfterWrite=[duration]: 最后一次写入后经过固定时间过期
-     * refreshAfterWrite=[duration]: 创建缓存或者最近一次更新缓存后经过固定的时间间隔，刷新缓存
-     * weakKeys: 打开key的弱引用
-     * weakValues：打开value的弱引用
-     * softValues：打开value的软引用
-     * recordStats：开发统计功能
-     * ---------------------
-     * 注意：
-     * <p>
-     * expireAfterWrite和expireAfterAccess同事存在时，以expireAfterWrite为准。
-     * maximumSize和maximumWeight不可以同时使用
-     * weakValues和softValues不可以同时使用
-     * <p>
-     * <p>
-     * 注意：
-     * expireAfterWrite和expireAfterAccess同时存在时，以expireAfterWrite为准。
-     * maximumSize和maximumWeight不可以同时使用
-     * <p>
-     * expireAfterWrite是在指定项在一定时间内没有创建/覆盖时，会移除该key，下次取的时候从loading中取
-     * expireAfterAccess是指定项在一定时间内没有读写，会移除该key，下次取的时候从loading中取
-     * refreshAfterWrite是在指定时间内没有被创建/覆盖，则指定时间过后，再次访问时，会去刷新该缓存，在新值没有到来之前，始终返回旧值
-     * 跟expire的区别是，指定时间过后，expire是remove该key，下次访问是同步去获取返回新值
-     * 而refresh则是指定时间后，不会remove该key，下次访问会触发刷新，新值没有回来时返回旧值
-     * ---------------------
-     */
     @Bean
     @Primary
     public CaffeineCacheManager caffeineCacheManager() {

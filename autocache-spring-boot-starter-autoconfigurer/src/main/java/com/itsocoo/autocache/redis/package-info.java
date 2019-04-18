@@ -15,4 +15,4 @@ package com.itsocoo.autocache.redis;
 // 1.同一个类中的方法名称不能重复 否则自动处理无法计算出具体的方法
 // 2.方法中的Map参数类型只能有一个 多个的话 无法具体解析出是什么值组合的缓存key
 // 3.暂时不支持参数类型是List
-// 4.其他限制 参考com.lzsz.cache.redis.test.service.impl.TestCacheEntityServiceImpl类里面的注释
+// 4.其他限制 参考com.itsocoo.cache.redis.test.service.impl.TestCacheEntityServiceImpl类里面的注释

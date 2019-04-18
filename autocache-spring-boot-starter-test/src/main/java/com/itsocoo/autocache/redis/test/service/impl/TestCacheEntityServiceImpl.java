@@ -22,16 +22,16 @@ public class TestCacheEntityServiceImpl implements ITestCacheEntityService {
 
     // TODO: 方法里面有lambda 在getDeclaredMethods()后获取的方法里面会产生很多的静态"lambda$xxx$"方法 要过滤掉
 
-    private static List<TestCacheEntity> datas = new ArrayList<>();
+    private static List<TestCacheEntity> entityList = new ArrayList<>();
 
     static {
-        datas.add(new TestCacheEntity(1L, "only1", "11111", "whb1"));
-        datas.add(new TestCacheEntity(2L, "only2", "22222", "whb2"));
-        datas.add(new TestCacheEntity(3L, "only3", "33333", "whb3"));
-        datas.add(new TestCacheEntity(4L, "only4", "44444", "whb4"));
-        datas.add(new TestCacheEntity(5L, "only5", "55555", "whb5"));
-        datas.add(new TestCacheEntity(6L, "only6", "66666", "whb6"));
-        datas.add(new TestCacheEntity(7L, "only7", "77777", "whb7"));
+        entityList.add(new TestCacheEntity(1L, "only1", "11111", "whb1"));
+        entityList.add(new TestCacheEntity(2L, "only2", "22222", "whb2"));
+        entityList.add(new TestCacheEntity(3L, "only3", "33333", "whb3"));
+        entityList.add(new TestCacheEntity(4L, "only4", "44444", "whb4"));
+        entityList.add(new TestCacheEntity(5L, "only5", "55555", "whb5"));
+        entityList.add(new TestCacheEntity(6L, "only6", "66666", "whb6"));
+        entityList.add(new TestCacheEntity(7L, "only7", "77777", "whb7"));
     }
 
     // TODO: 注意下面缓存的写法
@@ -40,19 +40,19 @@ public class TestCacheEntityServiceImpl implements ITestCacheEntityService {
 
     @Override
     public TestCacheEntity find(Long id) {
-        List<TestCacheEntity> collect = datas.stream().filter(testCacheEntity -> testCacheEntity.getId() == id).collect(Collectors.toList());
+        List<TestCacheEntity> collect = entityList.stream().filter(testCacheEntity -> testCacheEntity.getId() == id).collect(Collectors.toList());
         return collect.get(0);
     }
 
     @Override
     public TestCacheEntity findOneById(Long id) {
-        List<TestCacheEntity> collect = datas.stream().filter(testCacheEntity -> testCacheEntity.getId() == id).collect(Collectors.toList());
+        List<TestCacheEntity> collect = entityList.stream().filter(testCacheEntity -> testCacheEntity.getId() == id).collect(Collectors.toList());
         return collect.get(0);
     }
 
     @Override
     public TestCacheEntity findOneByBrandAndOrderId(String brand, String orderId) {
-        List<TestCacheEntity> collect = datas.stream().filter(testCacheEntity -> testCacheEntity.getBrand().equalsIgnoreCase(brand) && testCacheEntity.getOrderId().equalsIgnoreCase(orderId)).collect(Collectors.toList());
+        List<TestCacheEntity> collect = entityList.stream().filter(testCacheEntity -> testCacheEntity.getBrand().equalsIgnoreCase(brand) && testCacheEntity.getOrderId().equalsIgnoreCase(orderId)).collect(Collectors.toList());
         return collect.get(0);
     }
 
@@ -62,7 +62,7 @@ public class TestCacheEntityServiceImpl implements ITestCacheEntityService {
         String orderId = (String) params.get("orderId");
         String name = (String) params.get("name");
 
-        List<TestCacheEntity> collect = datas.stream().filter(testCacheEntity -> testCacheEntity.getBrand().equalsIgnoreCase(brand) && testCacheEntity.getOrderId().equalsIgnoreCase(orderId) && testCacheEntity.getName().equalsIgnoreCase(name)).collect(Collectors.toList());
+        List<TestCacheEntity> collect = entityList.stream().filter(testCacheEntity -> testCacheEntity.getBrand().equalsIgnoreCase(brand) && testCacheEntity.getOrderId().equalsIgnoreCase(orderId) && testCacheEntity.getName().equalsIgnoreCase(name)).collect(Collectors.toList());
         return collect.get(0);
     }
 
@@ -70,27 +70,27 @@ public class TestCacheEntityServiceImpl implements ITestCacheEntityService {
     public List<TestCacheEntity> list(Long id, String name) {
         Runnable runnable = () -> {
         };
-        return datas;
+        return entityList;
     }
 
     @Override
     public List<TestCacheEntity> lists(Map<String, Object> params) {
-        return datas;
+        return entityList;
     }
 
     @Override
     public List<TestCacheEntity> listAlls(TestCacheEntityParams testCacheEntityParams) {
-        return datas;
+        return entityList;
     }
 
     @Override
     public List<TestCacheEntity> listAlls2(Long id, Map<String, Object> objectMap, TestCacheEntityParams testCacheEntityParams) {
-        return datas;
+        return entityList;
     }
 
     @Override
     public List<TestCacheEntity> listAlls3(Long id, Map<String, Object> objectMap, TestCacheEntityParams testCacheEntityParams) {
-        return datas;
+        return entityList;
     }
 
     // TODO: 注意下面@CacheEvict的写法
