@@ -186,3 +186,7 @@ itsocoo.cache.aspect.scan-class-suffix=ServiceImpl
 }
 ```
 
+**具体见[代码](https://github.com/itsocoo/autocache-starter)**
+
+
+
